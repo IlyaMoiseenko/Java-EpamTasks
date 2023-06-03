@@ -1,5 +1,8 @@
 package Algorithmization.OneDimensionalArrays;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class OneDimensionalArrays {
     /*
     В массив A [N] занесены натуральные числа.
@@ -79,13 +82,13 @@ public class OneDimensionalArrays {
         double sum = 0;
 
         for (int i = 0; i < array.length; i++)
-            if (isSimple(i))
+            if (_isSimple(i))
                 sum += array[i];
 
         return sum;
     }
 
-    public boolean isSimple(int number) {
+    private boolean _isSimple(int number) {
         if(number < 2) return false;
 
         for(int i = 2; i < number / 2; i++)
@@ -93,5 +96,33 @@ public class OneDimensionalArrays {
                 return false;
 
         return true;
+    }
+
+    /*
+    Дана последовательность целых чисел a1,a2,,an.
+    Образовать новую последовательность, выбросив из исходной те члены,
+    которые равны min(a1,a2,,an).
+    */
+    public int[] task_8(int[] array) {
+        int min = _min(array);
+        int offset = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == min)
+                offset++;
+            else
+                array[i - offset] = array[i];
+        }
+
+        return Arrays.copyOf(array, array.length - offset);
+    }
+
+    private int _min(int[] array) {
+        int min = array[0];
+
+        for (int j : array)
+            min = Math.min(min, j);
+
+        return min;
     }
 }
