@@ -30,4 +30,20 @@ public class OneDimensionalArrays {
 
         return count;
     }
+
+    /*
+    Дан массив действительных чисел, размерность которого N.
+    Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов
+    */
+    public void task_3(int[] array) {
+        int countPositiveNumbers = 0;
+        int countNegativeNumbers = 0;
+        int countZeroNumbers = 0;
+
+        for (int j : array) {
+            if (j > 0) countPositiveNumbers++;
+            else if (j < 0) countNegativeNumbers++;
+            else countZeroNumbers++;
+        }
+    }
 }
