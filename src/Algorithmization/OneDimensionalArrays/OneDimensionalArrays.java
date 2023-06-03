@@ -46,4 +46,18 @@ public class OneDimensionalArrays {
             else countZeroNumbers++;
         }
     }
+
+    /*
+    Даны действительные числа а1 ,а2 ,..., аn .
+    Поменять местами наибольший и наименьший элементы.
+    */
+    public void task_4(int[] array) {
+        int maxElement = array[0];
+        int minElement = array[0];
+
+        for (int j : array) {
+            if (j > maxElement) maxElement = j;
+            else if (j < minElement) minElement = j;
+        }
+    }
 }
