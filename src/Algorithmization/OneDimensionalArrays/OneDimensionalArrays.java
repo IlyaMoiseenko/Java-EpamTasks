@@ -125,4 +125,33 @@ public class OneDimensionalArrays {
 
         return min;
     }
+
+    /*
+    В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число.
+    Если таких чисел несколько, то определить наименьшее из них.
+    */
+    public int task_9(int[] array) {
+        int currentCounter = 0;
+        int biggestCounter = 0;
+        int element = array[0];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array.length; j++) {
+                if (array[i] == array[j])
+                    currentCounter++;
+            }
+
+            if (currentCounter > biggestCounter) {
+                biggestCounter = currentCounter;
+                element = array[i];
+            } else if (currentCounter == biggestCounter) {
+                if (array[i] < element)
+                    element = array[i];
+            }
+
+            currentCounter = 0;
+        }
+
+        return element;
+    }
 }
