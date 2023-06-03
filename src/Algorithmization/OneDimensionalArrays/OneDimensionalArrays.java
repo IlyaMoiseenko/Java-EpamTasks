@@ -60,4 +60,14 @@ public class OneDimensionalArrays {
             else if (j < minElement) minElement = j;
         }
     }
+
+    /*
+    Даны целые числа а1 ,а2 ,..., аn .
+    Вывести на печать только те числа, для которых аi > i.
+    */
+    public void task_5(int[] array) {
+        for (int i = 0; i < array.length; i++)
+            if (array[i] > i)
+                System.out.println(array[i]);
+    }
 }
