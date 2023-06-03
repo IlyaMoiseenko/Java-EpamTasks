@@ -15,4 +15,17 @@ public class ArraysOfArrays {
             System.out.println();
         }
     }
+
+    /*
+    Дана квадратная матрица.
+    Вывести на экран элементы, стоящие на диагонали.
+    */
+    public void task_2(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix.length; j++) {
+                System.out.println(matrix[i][j]);
+                break;
+            }
+        }
+    }
 }
