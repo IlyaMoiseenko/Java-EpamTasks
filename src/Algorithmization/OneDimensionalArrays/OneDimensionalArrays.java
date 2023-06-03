@@ -70,4 +70,28 @@ public class OneDimensionalArrays {
             if (array[i] > i)
                 System.out.println(array[i]);
     }
+
+    /*
+    Задана последовательность N вещественных чисел.
+    Вычислить сумму чисел, порядковые номера которых являются простыми числами.
+    */
+    public double task_6(double[] array) {
+        double sum = 0;
+
+        for (int i = 0; i < array.length; i++)
+            if (isSimple(i))
+                sum += array[i];
+
+        return sum;
+    }
+
+    public boolean isSimple(int number) {
+        if(number < 2) return false;
+
+        for(int i = 2; i < number / 2; i++)
+            if(number % i == 0)
+                return false;
+
+        return true;
+    }
 }
