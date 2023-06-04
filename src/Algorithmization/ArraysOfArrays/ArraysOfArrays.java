@@ -87,4 +87,45 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+    {1 1 1 1 1 1 1 1}
+    {0 1 1 1 1 1 1 0}
+    {0 0 1 1 1 1 0 0}
+    {0 0 0 1 1 0 0 0}
+    {0 0 0 1 1 0 0 0}
+    {0 0 1 1 1 1 0 0}
+    {0 1 1 1 1 1 1 0}
+    {1 1 1 1 1 1 1 1}
+    */
+    public int[][] task_6(int n) throws Exception {
+        if (n % 2 != 0) throw new Exception("n must be even");
+
+        int[][] matrix = new int[n][n];
+        int start = 0;
+        int end = matrix.length;
+
+        for (int i = 0; i < matrix.length; i++) {
+            if (i < matrix.length / 2) {
+                end -= 1;
+
+                for (int j = start; j <= end; j++) {
+                    matrix[i][j] = 1;
+                }
+
+                start += 1;
+            } else {
+                start -= 1;
+
+                for (int j = start; j <= end; j++) {
+                    matrix[i][j] = 1;
+                }
+
+                end += 1;
+            }
+        }
+
+        return matrix;
+    }
 }
