@@ -28,4 +28,9 @@ public class ArraysOfArrays {
             }
         }
     }
+
+    /*Дана матрица. Вывести k-ю строку и p-й столбец матрицы.*/
+    public void task_3(int[][] matrix, int rowIndex, int columnIndex) {
+        System.out.println(matrix[rowIndex][columnIndex]);
+    }
 }
