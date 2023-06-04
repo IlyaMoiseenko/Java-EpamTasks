@@ -33,4 +33,35 @@ public class ArraysOfArrays {
     public void task_3(int[][] matrix, int rowIndex, int columnIndex) {
         System.out.println(matrix[rowIndex][columnIndex]);
     }
+
+    /*
+    Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+    {1 2 3 ... n}
+    {n n-1 n-2 ... 1}
+    {1 2 3 ... n}
+    {n n-1 n-2 ... 1}
+    */
+    public int[][] task_4(int n) throws Exception {
+        if (n % 2 != 0) throw new Exception("n must be even");
+
+        int[][] matrix = new int[n][n];
+
+        for (int i = 0; i < matrix.length; i++) {
+            if (_checkIndex(i)) {
+                for (int j = 0; j < matrix.length; j++) {
+                    matrix[i][j] = n - j;
+                }
+            } else {
+                for (int j = 0; j < matrix.length; j++) {
+                    matrix[i][j] = j + 1;
+                }
+            }
+        }
+
+        return matrix;
+    }
+
+    private boolean _checkIndex(int index) {
+        return index % 2 != 0;
+    }
 }
