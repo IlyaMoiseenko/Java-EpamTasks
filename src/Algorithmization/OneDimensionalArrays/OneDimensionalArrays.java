@@ -56,12 +56,24 @@ public class OneDimensionalArrays {
     */
     public void task_4(int[] array) {
         int maxElement = array[0];
-        int minElement = array[0];
+        int maxElementIndex = 0;
 
-        for (int j : array) {
-            if (j > maxElement) maxElement = j;
-            else if (j < minElement) minElement = j;
+        int minElement = array[0];
+        int minElementIndex = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxElement) {
+                maxElement = array[i];
+                maxElementIndex = i;
+            }
+            else if (array[i] < minElement) {
+                minElement = array[i];
+                minElementIndex = i;
+            }
         }
+
+        array[maxElementIndex] = minElement;
+        array[minElementIndex] = maxElement;
     }
 
     /*
