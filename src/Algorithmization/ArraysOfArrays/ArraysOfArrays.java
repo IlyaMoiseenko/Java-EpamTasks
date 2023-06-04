@@ -64,4 +64,27 @@ public class ArraysOfArrays {
     private boolean _checkIndex(int index) {
         return index % 2 != 0;
     }
+
+    /*
+    Сформировать квадратную матрицу порядка n по заданному образцу(n - четное):
+    {1 1 1 1 1}
+    {2 2 2 2 0}
+    {3 3 3 0 0}
+    {4 4 0 0 0}
+    */
+    public int[][] task_5(int n) throws Exception {
+        if (n % 2 != 0) throw new Exception("n must be even");
+
+        int[][] matrix = new int[n][n];
+        int count = matrix.length;
+
+        for (int i = 0; i <= matrix.length; i++) {
+            count -= 1;
+            for (int j = 0; j <= count; j++) {
+                matrix[i][j] = i + 1;
+            }
+        }
+
+        return matrix;
+    }
 }
