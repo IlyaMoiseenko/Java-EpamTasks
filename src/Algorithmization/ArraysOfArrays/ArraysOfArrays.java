@@ -125,4 +125,22 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    Сформировать квадратную матрицу порядка N по правилу:
+    Math.sin(Math.pow(i, 2) - Math.pow(j, 2) / n);
+    */
+    public double[][] task_7(int n) throws Exception {
+        if (n % 2 != 0) throw new Exception("n must be even");
+
+        double[][] matrix = new double[n][n];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                matrix[i][j] = Math.sin(Math.pow(i, 2) - Math.pow(j, 2) / n);
+            }
+        }
+
+        return matrix;
+    }
 }
