@@ -143,4 +143,27 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    В числовой матрице поменять местами два столбца любых столбца, т. е.
+    все элементы одного столбца поставить на соответствующие им позиции другого,
+    а его элементы второго переместить в первый. Номера столбцов вводит пользователь с клавиатуры.
+    */
+    public int[][] task_8(int[][] matrix, int numberOfCol, int numberOfCol2) throws Exception {
+        if (numberOfCol2 > matrix.length) throw new Exception();
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (j > numberOfCol2) break;
+
+                if (j == numberOfCol) {
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[i][numberOfCol2];
+                    matrix[i][numberOfCol2] = temp;
+                }
+            }
+        }
+
+        return matrix;
+    }
 }
