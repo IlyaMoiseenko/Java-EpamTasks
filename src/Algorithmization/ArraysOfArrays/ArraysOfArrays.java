@@ -22,10 +22,7 @@ public class ArraysOfArrays {
     */
     public void task_2(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix.length; j++) {
-                System.out.println(matrix[i][j]);
-                break;
-            }
+            System.out.println(matrix[i][i]);
         }
     }
 
