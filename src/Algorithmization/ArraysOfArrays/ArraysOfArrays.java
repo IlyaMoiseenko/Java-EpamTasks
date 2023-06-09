@@ -202,4 +202,36 @@ public class ArraysOfArrays {
                 System.out.println(matrix[i][i]);
         }
     }
+
+    /*
+    Матрицу 10x20 заполнить случайными числами от 0 до 15.
+    Вывести на экран саму матрицу и номера строк, в которых число 5 встречается три и более раз.
+    */
+    public void task_11(int[][] matrix) {
+        int countNumberFive = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (matrix[i][j] == 5)
+                    countNumberFive += 1;
+
+                if (countNumberFive >= 3) {
+                    System.out.println(i);
+                    break;
+                }
+            }
+
+            countNumberFive = 0;
+        }
+    }
+
+    public void _printMatrix(int[][] matrix, int n, int m) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrix[i][j] + " | ");
+            }
+
+            System.out.println();
+        }
+    }
 }
