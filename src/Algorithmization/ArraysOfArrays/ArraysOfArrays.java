@@ -166,4 +166,30 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце.
+    Определить, какой столбец содержит максимальную сумму.
+    */
+    public int task_9(int[][] matrix) {
+        boolean key = true;
+        int maxSum = 0;
+        int colIndex = 0;
+
+        while (key) {
+            int currentSum = 0;
+
+            for (int i = 0; i < matrix.length; i++) {
+                currentSum += matrix[i][colIndex];
+            }
+
+            colIndex += 1;
+            if (colIndex > matrix.length - 1)
+                key = false;
+
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        return maxSum;
+    }
 }
