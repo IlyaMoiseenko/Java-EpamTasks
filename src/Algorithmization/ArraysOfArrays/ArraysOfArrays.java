@@ -1,5 +1,8 @@
 package Algorithmization.ArraysOfArrays;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class ArraysOfArrays {
     /*
     Дана матрица. Вывести на экран все нечетные столбцы,
@@ -233,5 +236,18 @@ public class ArraysOfArrays {
 
             System.out.println();
         }
+    }
+
+    /*
+    Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
+    */
+    public Integer[][] task_12(Integer[][] matrix) {
+        for (int i = 0; i < matrix.length; i++)
+            Arrays.sort(matrix[i]);
+
+        for (int i = 0; i < matrix.length; i++)
+            Arrays.sort(matrix[i], Collections.reverseOrder());
+
+        return matrix;
     }
 }
