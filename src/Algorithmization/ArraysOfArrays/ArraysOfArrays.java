@@ -250,4 +250,37 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
+    */
+    public int[][] task_13(int[][] matrix) {
+        // по убыванию
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                for (int k = 0; k < matrix[j].length; k++) {
+                    if (matrix[i][k] > matrix[j][k]) {
+                        int temp = matrix[i][k];
+                        matrix[i][k] = matrix[j][k];
+                        matrix[j][k] = temp;
+                    }
+                }
+            }
+        }
+
+        // по возрастанию
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                for (int k = 0; k < matrix[j].length; k++) {
+                    if (matrix[i][k] < matrix[j][k]) {
+                        int temp = matrix[j][k];
+                        matrix[j][k] = matrix[i][k];
+                        matrix[i][k] = temp;
+                    }
+                }
+            }
+        }
+
+        return matrix;
+    }
 }
