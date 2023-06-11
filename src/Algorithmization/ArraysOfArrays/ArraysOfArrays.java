@@ -283,4 +283,22 @@ public class ArraysOfArrays {
 
         return matrix;
     }
+
+    /*
+    Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
+    */
+    public int[][] task_15(int[][] matrix) {
+        int maxElement = 0;
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix.length; j++)
+                if (matrix[i][j] > maxElement)
+                    maxElement = matrix[i][j];
+
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix.length; j++)
+                if (matrix[i][j] % 2 != 0)
+                    matrix[i][j] = maxElement;
+
+        return matrix;
+    }
 }
