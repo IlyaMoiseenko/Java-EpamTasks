@@ -64,4 +64,28 @@ public class Sorting {
 
         return array;
     }
+
+    /*
+    Сортировка обменами. Дана последовательность чисел a1 < a2 < a3 < a4.Требуется переставить числа в
+    порядке возрастания. Для этого сравниваются два соседних числа ai и ai+1. Если ai > ai+1 то делается
+    перестановка. Так продолжается до тех пор, пока все элементы не станут расположены в порядке возрастания.
+    Составить алгоритм сортировки, подсчитывая при этом количества перестановок.
+    */
+    public int[] task_4(int[] array) {
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+
+                    isSorted = false;
+                }
+            }
+        }
+
+        return array;
+    }
 }
