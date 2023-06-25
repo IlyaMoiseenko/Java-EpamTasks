@@ -38,4 +38,30 @@ public class Sorting {
 
         return array1;
     }
+
+    /*
+    Сортировка выбором. Дана последовательность чисел a1 < a2 < a3 < a4 .Требуется переставить элементы так,
+    чтобы они были расположены по убыванию. Для этого в массиве, начиная с первого, выбирается наибольший
+    элемент и ставится на первое место, а первый - на место наибольшего. Затем, начиная со второго, эта процедура
+    повторяется. Написать алгоритм сортировки выбором.
+    */
+    public int[] task_3(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int maxElement = array[i];
+            int maxElementIndex = i;
+
+            for (int j = i; j < array.length; j++) {
+                if (array[j] > maxElement) {
+                    maxElement = array[j];
+                    maxElementIndex = j;
+                }
+            }
+
+            int temp = array[i];
+            array[i] = maxElement;
+            array[maxElementIndex] = temp;
+        }
+
+        return array;
+    }
 }
