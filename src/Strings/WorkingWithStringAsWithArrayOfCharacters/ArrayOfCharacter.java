@@ -55,4 +55,29 @@ public class ArrayOfCharacter {
 
         return countDigits;
     }
+
+    /*
+    В строке найти количество чисел
+    */
+    public int task_4(String sentence) {
+        int countDigits = 0;
+        StringBuilder digitString = new StringBuilder();
+
+        for (int i = 0; i < sentence.length(); i++) {
+            if (Character.isDigit(sentence.charAt(i))) {
+                digitString.append(sentence.charAt(i));
+            } else {
+                if (digitString.length() >= 2) {
+                    countDigits++;
+                }
+
+                digitString.setLength(0);
+            }
+        }
+
+        if (digitString.length() >= 2)
+            countDigits++;
+
+        return countDigits;
+    }
 }
