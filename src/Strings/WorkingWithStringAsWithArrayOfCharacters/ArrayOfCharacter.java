@@ -41,4 +41,18 @@ public class ArrayOfCharacter {
 
         return newSentence.toString();
     }
+
+    /*
+    В строке найти количество цифр
+    */
+    public int task_3(String sentence) {
+        int countDigits = 0;
+
+        for (int i = 0; i < sentence.length(); i++) {
+            if (Character.isDigit(sentence.charAt(i)))
+                countDigits++;
+        }
+
+        return countDigits;
+    }
 }
