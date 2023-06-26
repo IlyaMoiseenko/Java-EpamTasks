@@ -80,4 +80,27 @@ public class ArrayOfCharacter {
 
         return countDigits;
     }
+
+    /*
+    Удалить в строке все лишние пробелы, то есть серии подряд идущих пробелов заменить
+    на одиночные пробелы. Крайние пробелы в строке удалить.
+    */
+    public String task_5(String sentences) {
+        sentences = sentences.trim();
+        int countSpace = 0;
+
+        for (int i = 0; i < sentences.length(); i++) {
+            if (sentences.charAt(i) == ' ') {
+                countSpace++;
+            } else if (countSpace > 1) {
+                sentences = sentences.replace(
+                        sentences.substring(i - countSpace + 1, i), " "
+                );
+
+                countSpace = 0;
+            }
+        }
+
+        return sentences;
+    }
 }
