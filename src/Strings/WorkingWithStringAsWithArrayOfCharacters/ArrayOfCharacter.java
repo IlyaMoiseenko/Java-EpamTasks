@@ -24,4 +24,21 @@ public class ArrayOfCharacter {
 
         return snake_case;
     }
+
+    /*
+    Замените в строке все вхождения 'word' на 'letter'
+    */
+    public String task_2(String sentence) {
+        String[] words = sentence.split(" ");
+        StringBuilder newSentence = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals("word"))
+                newSentence.append("letter" + " ");
+            else
+                newSentence.append(words[i]).append(" ");
+        }
+
+        return newSentence.toString();
+    }
 }
