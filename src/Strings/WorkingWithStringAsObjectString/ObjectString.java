@@ -19,4 +19,11 @@ public class ObjectString {
 
         return maxCountSpace;
     }
+
+    /*
+    В строке вставить после каждого символа 'a' символ 'b'
+    */
+    public String task_2(String text) {
+        return text.replace("a", "ab");
+    }
 }
