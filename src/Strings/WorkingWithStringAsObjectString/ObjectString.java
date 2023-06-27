@@ -34,4 +34,18 @@ public class ObjectString {
         String reverseWord = new StringBuilder(word).reverse().toString();
         return word.equals(reverseWord);
     }
+
+    /*
+    Подсчитать, сколько раз среди символов заданной строки встречается буква “а”.
+    */
+    public int task_5(String text, char findSymbol) {
+        int countSymbol = 0;
+
+        for (char c : text.toCharArray()) {
+            if (c == Character.toUpperCase(findSymbol) || c == Character.toUpperCase(findSymbol))
+                countSymbol++;
+        }
+
+        return countSymbol;
+    }
 }
