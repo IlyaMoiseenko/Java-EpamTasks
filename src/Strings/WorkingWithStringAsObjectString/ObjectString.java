@@ -36,6 +36,13 @@ public class ObjectString {
     }
 
     /*
+    С помощью функции копирования и операции конкатенации составить из частей слова “информатика” слово “торт”.
+    */
+    public String task_4(String word) {
+        return word.charAt(7) + word.substring(3, 5) + word.charAt(7);
+    }
+
+    /*
     Подсчитать, сколько раз среди символов заданной строки встречается буква “а”.
     */
     public int task_5(String text, char findSymbol) {
