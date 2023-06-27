@@ -26,4 +26,12 @@ public class ObjectString {
     public String task_2(String text) {
         return text.replace("a", "ab");
     }
+
+    /*
+    Проверить, является ли заданное слово палиндромом
+    */
+    public boolean task_3(String word) {
+        String reverseWord = new StringBuilder(word).reverse().toString();
+        return word.equals(reverseWord);
+    }
 }
