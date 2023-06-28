@@ -108,4 +108,21 @@ public class ObjectString {
 
         return maxLengthWord.toString();
     }
+
+    /*
+    Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке. Учитывать только английские
+    буквы
+    */
+    public int[] task_9(String text) {
+        int[] countLetters = new int[2];
+
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isLowerCase(text.charAt(i)))
+                countLetters[0]++;
+            else if (Character.isUpperCase(text.charAt(i)))
+                countLetters[1]++;
+        }
+
+        return countLetters;
+    }
 }
