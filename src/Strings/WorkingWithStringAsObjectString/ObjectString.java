@@ -55,4 +55,18 @@ public class ObjectString {
 
         return countSymbol;
     }
+
+    /*
+    Из заданной строки получить новую, повторив каждый символ дважды
+    */
+    public String task_6(String text) {
+        StringBuilder newText = new StringBuilder();
+
+        for (char c : text.toCharArray()) {
+            newText.append(c);
+            newText.append(c);
+        }
+
+        return newText.toString();
+    }
 }
