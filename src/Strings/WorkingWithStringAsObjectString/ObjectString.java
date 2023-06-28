@@ -1,5 +1,7 @@
 package Strings.WorkingWithStringAsObjectString;
 
+import java.util.Arrays;
+
 public class ObjectString {
     /*
     Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем
@@ -68,5 +70,25 @@ public class ObjectString {
         }
 
         return newText.toString();
+    }
+
+    /*
+    Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых
+    длинных слов может быть несколько, не обрабатывать
+    */
+    public String task_8(String text) {
+        String[] words = text.split(" ");
+        StringBuilder maxLengthWord = new StringBuilder(words[0]);
+
+        for (String word : words) {
+            if (word.length() > maxLengthWord.length())
+                maxLengthWord.replace(
+                        0,
+                        maxLengthWord.length(),
+                        word
+                );
+        }
+
+        return maxLengthWord.toString();
     }
 }
