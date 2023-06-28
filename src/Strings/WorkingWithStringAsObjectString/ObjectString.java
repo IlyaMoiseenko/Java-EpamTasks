@@ -73,6 +73,23 @@ public class ObjectString {
     }
 
     /*
+    Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например, если было введено "abc cde
+    def", то должно быть выведено "abcdef"
+    */
+    public String task_7(String text) {
+        StringBuilder newText = new StringBuilder(text.replace(" ", ""));
+
+        for (int i = 0; i < newText.length(); i++) {
+            for (int j = newText.length() - 1; j > i; j--) {
+                if (newText.charAt(i) == newText.charAt(j))
+                    newText.deleteCharAt(j);
+            }
+        }
+
+        return newText.toString();
+    }
+
+    /*
     Вводится строка слов, разделенных пробелами. Найти самое длинное слово и вывести его на экран. Случай, когда самых
     длинных слов может быть несколько, не обрабатывать
     */
