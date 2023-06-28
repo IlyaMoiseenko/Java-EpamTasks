@@ -125,4 +125,18 @@ public class ObjectString {
 
         return countLetters;
     }
+
+    /*
+    Строка X состоит из нескольких предложений, каждое из которых кончается точкой, восклицательным или вопросительным
+    знаком. Определить количество предложений в строке X
+    */
+    public int task_10(String text) {
+        int countSentences = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            char currentChar = text.charAt(i);
+            if (currentChar == '.' || currentChar == '!' || currentChar == '?') countSentences++;
+        }
+        return countSentences;
+    }
 }
